@@ -1,0 +1,249 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, div, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, object, code, legend, button, input, textarea, label, th, td, a, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+body {
+    font: 12px/1.5 Tahoma,'\5FAE\8F6F\96C5\9ED1','Microsoft Yahei',"hiragino sans gb", Helvetica, Arial, "\5b8b\4f53", 'sans-serif';
+    color: #333;
+}
+
+/*清除内外边距*/
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-size: 100%;
+}
+
+/*设置默认字体*/
+:focus {
+    outline: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+/*重置列表*/
+fieldset, img {
+    border: 0 none;
+}
+
+/*重置图片元素*/
+address, caption, cite, code, dfn, em, i, th, var, optgroup {
+    font-style: normal;
+    font-weight: normal;
+}
+
+abbr, acronym {
+    border: 0;
+    font-variant: normal;
+}
+
+input, button, textarea, select, optgroup, option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+code, kbd, samp, tt {
+    font-size: 100%;
+}
+
+/*@purpose To enable resizing for IE */
+/*@branch For IE6-Win, IE7-Win */
+input, button, textarea, select {
+    *font-size: 100%;
+    outline: none;
+}
+
+/*
+form label {
+    cursor: pointer;
+}
+*/
+
+textarea {
+    resize: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*重置表格*/
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.uploadBox .imgBox{
+	position: relative;
+}
+.uploadBox .imgBox .fileInput{
+	width: 400px;
+    height: 400px;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index:9;
+}
+.uploadBox .imgBox p{
+	position: absolute;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    background: url(../images/addimg.png) no-repeat center center;
+    background-size: 120px auto;
+}
+.uploadBox .imgBox .addimg{
+	text-align: center;
+	vertical-align: middle;
+	width: 400px;
+	height: 400px;
+	line-height: 400px;
+}
+.uploadBox .imgBox .addimg img{
+	line-height: 400px;
+	max-width: 400px;
+	max-height: 400px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+
+/*滑动box*/
+.uploadBox{
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	background: #fcfcfc;
+	width: 400px;
+	height: 524px;
+	margin: auto;
+	position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+   
+}
+.uploadBox>ul{
+	width: 400px;
+	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+	height: 50px;
+	border-top: 1px solid #ccc;
+}
+.uploadBox>ul li{
+	float: left;
+	height: 50px;
+	line-height: 50px;
+}
+.upClose{
+	width: 66.6%;
+}
+.close{
+	width: 33.3%;
+}
+.uploadedBox{
+	padding: 10px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #ccc;
+	position: relative;
+	height: 70px;
+}
+.uploadedBox ul{
+	height: 50px;
+	overflow: auto;
+	overflow-x: auto;
+	width: 100%;
+}
+.uploadedBox ul li{
+	height: 50px;
+	width: 50px;
+	overflow: hidden;
+	float: left;
+	margin-right: 5px;
+    line-height: 50px;
+    vertical-align: middle;
+}
+.uploadedBox ul li span{
+	width: 100%;
+	display: block;
+	vertical-align: middle;
+}
+.uploadedBox ul li img{
+	max-width: 48px;
+	max-height: 48px;
+	line-height: 48px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-top: -5px;
+}
+.slidebBox {
+	height:50px; 
+	float:left; 
+	width:360px; 
+	overflow: hidden; 
+	position:relative; 
+} 
+.slidebBox li { 
+	display:block; 
+	float:left; 
+	margin-left:5px; 
+	margin-right:5px;
+	color:#ccc;
+	text-decoration:none;
+	text-align:center; 
+	cursor:pointer;
+	border: 1px solid #ccc;
+    box-sizing: border-box;
+} 
+.slidebBox li:hover { 
+	color:#999; 
+} 
+.slidebBox li.active { 
+	background-position:-174px 0; 
+	color:#555;
+	cursor:default;
+} 
+a.prev, a.next { 
+	display:block;
+	height:50px;
+	line-height: 50px; 
+	float:left; 
+	cursor:pointer;
+} 
+.scroll_list{ 
+	width:10000em; 
+	position:absolute; 
+} 
+.scrollSign{
+	color: red;
+	height: 20px;
+	display: inline-block;
+}
