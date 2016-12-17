@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <!-- <meta id="viewport" name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no" /> -->
+    <meta id="viewport" name="viewport" content="width=750,user-scalable=no,target-densitydpi=device-dpi" />
+    <meta name="format-detection" content="telephone=no" />
+    <title></title>
+    <style>
+        方法一： position 加 margin
+        .wrap { width: 200px; height: 200px; background: yellow; position: relative; } 
+        .wrap .center { width: 100px; height: 100px; background: green; margin: auto; position: absolute; left: 0; right: 0; top: 0; bottom: 0; } 
+        /*兼容性：主流浏览器均支持， IE6 不支持*/
+
+        方法二： diaplay:table-cell
+        .wrap{ width: 200px; height: 200px; background: yellow; display: table-cell; vertical-align: middle; text-align: center; } 
+        .center{ display: inline-block; vertical-align: middle; width: 100px; height: 100px; background: green; } 
+        /*兼容性：由于 display:table-cell 的原因， IE6\7 不兼容*/
+
+        方法三： position 加 transform
+        .wrap { position: relative; background: yellow; width: 200px; height: 200px;}
+        .center { position: absolute; background: green; top:50%; left:50%; -webkit-transform:translate(-50%,-50%); transform:translate(-50%,-50%); width: 100px; height: 100px; }
+        /*兼容性： ie9 以下不支持 transform ，手机端表现的比较好。*/
+
+        方法四： flex;align-items: center;justify-content: center
+        .wrap { background: yellow; width: 200px; height: 200px; display: flex; align-items: center; justify-content: center; }
+        .center { background: green; width: 100px; height: 100px; } 
+        /*移动端首选*/
+
+        方法五： display:flex;margin:auto
+        .wrap { background: yellow; width: 200px; height: 200px; display: flex; }
+        .center { background: green; width: 100px; height: 100px; margin: auto; } 
+        /*移动端首选*/
+
+        方法六：纯 position
+        .wrap { background: yellow; width: 200px; height: 200px; position: relative; } 
+        /*/方法一/ */
+        .center { background: green; position: absolute; width: 100px; height: 100px; left: 50px; top: 50px;} 
+        /*/方法二/ */
+        .center { background: green; position: absolute; width: 100px; height: 100px; left: 50%; top: 50%; margin-left:-50px; margin-top:-50px; } 
+        /*兼容性：适用于所有浏览器*/
+        /*方法六中的方法一计算公式如下：
+        子元素（ conter ）的 left 值计算公式： left=(父元素的宽 - 子元素的宽 ) / 2=(200-100) / 2=50px; 子元素（ conter ）的 top 值计算公式： top=(父元素的高 - 子元素的高 ) / 2=(200-100) / 2=50px;
+        方法二计算公式： left 值固定为 50%; 子元素的 margin-left= -（子元素的宽 /2 ）=-100/2= -50px; top 值也一样，固定为 50%
+        子元素的 margin-top= -（子元素的高 /2 ）=-100/2= -50px;*/
+
+        方法七：兼容低版本浏览器，不固定宽高
+        /*不固定宽高，自适应*/
+        .table { height: 200px;/*/高度值不能少/*/ width: 200px;/*/宽度值不能少/*/ display: table; position: relative; float:left; background: yellow; }
+        .tableCell { display: table-cell; vertical-align: middle; text-align: center;*position: absolute; padding: 10px; *top: 50%; *left: 50%; } 
+        .content { *position:relative; *top: -50%; *left: -50%; background: green; } 
+        暂时总结上面的七种，这种方法太多，其实只要习惯了其中的一两种也就够用了。
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="center"></div>
+    </div>
+
+    <div class="wrap1">
+        <div class="center1"></div>
+    </div>
+
+    <div class="wrap2">
+        <div class="center2"></div>
+    </div>
+</body>
+</html>
+
