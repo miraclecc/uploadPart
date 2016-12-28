@@ -168,6 +168,7 @@ a:hover {
 }
 .close{
 	width: 33.3%;
+	cursor: pointer;
 }
 .uploadedBox{
 	padding: 10px;

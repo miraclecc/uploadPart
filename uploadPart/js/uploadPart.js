@@ -20,6 +20,10 @@
 	$.xy.upload.clickUploadDialog = function (picCount) {
 		$.xy.upload.dialogTpl(picCount);
 	}
+	//点击关闭按钮关闭上传图片弹窗
+	$.xy.upload.clickCloseDialog = function (picCount) {
+		$(".uploadBox").hide();
+	}
 
 	$.xy.upload.dialogTpl = function (picCount) {
 		var tpl = '<div class="uploadBox">'
@@ -52,7 +56,7 @@
                     +'</div>'
                     +'<ul>'
                         +'<li class="upClose"><div id="statusID"></div></li>'
-                        +'<li class="close">关闭</li>'
+                        +'<li class="close" onclick = "jQuery.xy.upload.clickCloseDialog()">关闭</li>'
                     +'</ul>'
                 +'</div> ';
             $("body").append(tpl);  
